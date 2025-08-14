@@ -222,6 +222,10 @@ sudo tail -f /var/log/nginx/access.log
 - `POST /start_quiz` - Start new quiz session
 - `POST /slack/events` - Handle Slack interactions
 
+## Known Issues
+- Questions with more than one answer will not work in current state - stretch goal anyone?
+- The app is not multi-threaded meaning only one working process at a time and one session.
+
 ## 🤝 Contributing
 
 1. Fork the repository
