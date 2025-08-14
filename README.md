@@ -38,8 +38,6 @@ pip install -r requirements.txt
 python3 app.py
 ```
 
-The app will be available at `http://localhost:5000`
-
 ## 🔧 Slack Configuration
 
 ### 1. Create a Slack App
@@ -103,7 +101,7 @@ nano .env
 # Add your Slack tokens and configuration
 ```
 
-### 4. Configure Systemd Service
+### 4. Configure Systemd Service - Optional
 Create `/etc/systemd/system/flask_app.service`:
 
 ```ini
@@ -125,7 +123,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-### 5. Configure Nginx
+### 5. Configure Nginx - Optional
 Create `/etc/nginx/conf.d/app.conf`:
 
 ```nginx
@@ -191,7 +189,7 @@ Edit `qa_lookup.json` following this format:
 }
 ```
 
-### Testing Locally
+### Testing Locally - Optional, easy to test manually in slack.
 1. Set up ngrok for Slack webhook testing:
 ```bash
 ngrok http 5000
@@ -223,6 +221,10 @@ sudo tail -f /var/log/nginx/access.log
 - `GET /` - Health check
 - `POST /start_quiz` - Start new quiz session
 - `POST /slack/events` - Handle Slack interactions
+
+## Known Issues
+- Questions with more than one answer will not work in current state - stretch goal anyone?
+- The app is not multi-threaded meaning only one working process at a time and one session.
 
 ## 🤝 Contributing
 
