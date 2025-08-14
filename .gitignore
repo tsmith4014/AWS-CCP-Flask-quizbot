@@ -6,3 +6,4 @@ __pycache__/
 *.log
 quiz_sessions.json
 quiz_sessions.lock
+flask_app.service
