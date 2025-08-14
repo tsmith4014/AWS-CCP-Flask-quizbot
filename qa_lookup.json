@@ -1,0 +1,264 @@
+{
+  "practice_exam_a": {
+    "1. Your organization has decided to adopt 'infrastructure as code' with AWS CloudFormation for new infrastructure launched into your AWS accounts. Which pillar of the Well-Architected Framework is this recommendation included in?\na. Operational Excellence\nb. Security\nc. Reliability\nd. Performance Efficiency": {
+      "answer": "a. Operational Excellence",
+      "explanation": "CloudFormation’s version-controlled templates enable repeatable deployments and continuous improvement—hallmarks of the Operational Excellence (OE) pillar. • Security is about least-privilege and incident response. • Reliability covers HA and recovery. • Performance Efficiency is about choosing the right resource types. 🧑‍💻 Hook: “OE = DevOps hygiene.”"
+    },
+    "2. Your company is moving a self-managed database over to AWS, and it will be running on EC2 for at least 3 years. They want to avoid any large expenses up-front but want to reduce the monthly cost as much as possible. What EC2 pricing model should you recommend?\na. On-Demand\nb. Reserved - 3 year - No Upfront\nc. Spot Instances\nd. Dedicated Hosts": {
+      "answer": "b. Reserved - 3 year - No Upfront",
+      "explanation": "A 3-Year Standard Reserved Instance with *no upfront* cuts the hourly rate ~60-70 % while requiring zero cap-ex—ideal for a steady 3-year workload. • On-Demand keeps the highest rate. • Spot is cheapest per hour but interruptible (risky for a DB). • Dedicated Host is for BYOL licensing, not cost saving. 💰 Hook: “RI = Rent-to-save; Spot = Spare capacity.”"
+    },
+    "3. What is the least costly support plan that provides 24/7 access to documentation, whitepapers, and support forums?\na. Developer\nb. Business\nc. Basic\nd. Enterprise": {
+      "answer": "c. Basic",
+      "explanation": "Basic (free) includes docs, white-papers, and re:Post forums 24 × 7. • Developer adds business-hours email. • Business adds 24 × 7 phone/chat. • Enterprise adds TAM and concierge. 📚 Hook: “Docs are free; email isn’t.”"
+    },
+    "4. You want to launch multiple EC2 instances that all have the same operating system customizations. What would you need to create so that each of these instances included those customizations?\na. Elastic Block Store Volume\nb. Custom Amazon Machine Image (AMI)\nc. Launch Configuration\nd. Amazon Machine Learning Model": {
+      "answer": "b. Custom Amazon Machine Image (AMI)",
+      "explanation": "A custom AMI bakes in OS tweaks so every new instance is an exact clone. • An EBS volume is just storage. • A Launch Configuration *references* an AMI—it doesn’t create one. • An ML model is unrelated. 🖨️ Hook: “AMI = golden image.”"
+    },
+    "5. Which managed service could provide distribution of incoming traffic across multiple Amazon EC2 instances?\na. Amazon Route 53\nb. Amazon CloudFront\nc. Elastic Load Balancing\nd. AWS VPN": {
+      "answer": "c. Elastic Load Balancing",
+      "explanation": "Elastic Load Balancing (ELB) routes each request to a healthy EC2 target across AZs. • Route 53 is DNS only. • CloudFront is a CDN caching edge copies. • VPN handles encrypted tunnels. 🚦 Hook: “ELB is the traffic cop.”"
+    },
+    "6. Your organization has decided to experiment with Machine Learning for a specific business problem. Later the same day, the team has a Machine Learning environment up and running in AWS to begin experimentation. Which cloud benefit is illustrated in this scenario?\na. Elasticity\nb. Agility\nc. Durability\nd. Fault Tolerance": {
+      "answer": "b. Agility",
+      "explanation": "Spinning up an ML sandbox in hours shows the speed of innovation—Agility. • Elasticity is auto-scaling capacity. • Durability protects data (e.g., 11 × 9s for S3). • Fault Tolerance keeps apps alive through failures. ⚡ Hook: “Agility = try ideas fast.”"
+    },
+    "7. Which of the following are pillars of the AWS Well-Architected Framework? (select three)\na. Performance Optimization\nb. Operational Excellence\nc. Security\nd. Cost Optimization": {
+      "answer": "b. Operational Excellence, c. Security, d. Cost Optimization",
+      "explanation": "AWS lists six pillars: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, and Sustainability. The three listed options are valid pillars. • “Performance Optimization” is a distractor—the real pillar is *Performance Efficiency*. 🌈 Hook: “OSR + PCS” mnemonic."
+    },
+    "8. Which element of AWS Global Infrastructure consists of multiple Availability Zones?\na. Edge Location\nb. Region\nc. Content Delivery Network\nd. Availability Zone": {
+      "answer": "b. Region",
+      "explanation": "A Region is a cluster of ≥ 2 isolated Availability Zones. • A single AZ ≠ Region. • Edge Locations host CloudFront POPs. • “CDN” is the overall network, not an infra element. 🗺️ Hook: “REGion = REGroup of AZs.”"
+    },
+    "9. What feature of a Virtual Private Cloud (VPC) works like a virtual firewall for the network?\na. Subnet\nb. Network ACL\nc. Security Groups\nd. Route Table": {
+      "answer": "b. Network ACL",
+      "explanation": "A Network ACL is a stateless firewall at the **subnet** (network) layer. • Security Group is stateful and protects **instances**. • A Subnet is just an IP range. • A Route Table directs paths, not filters traffic. 🔒 Hook: “ACL = Area firewall; SG = Server guard.”"
+    },
+    "10. Which AWS service enables organizations to create a private link between their data center and an AWS region that doesn't travel over the public Internet?\na. AWS Direct Connect\nb. AWS VPN\nc. AWS Snowball\nd. AWS Storage Gateway": {
+      "answer": "a. AWS Direct Connect",
+      "explanation": "Direct Connect provides dedicated fiber from on-prem to AWS, avoiding the public Internet for consistent latency. • VPN runs over the Internet. • Snowball ships disks. • Storage Gateway caches/tiers storage. �� Hook: “DX = direct line to AWS.”"
+    },
+    "11. Which service provides nearly limitless object storage with multiple storage classes covering use cases from frequent access to archive storage?\na. Amazon S3\nb. Amazon EBS\nc. Amazon Glacier\nd. Amazon RDS": {
+      "answer": "a. Amazon S3",
+      "explanation": "S3 delivers petabyte-scale object storage with classes from Standard to Glacier Deep Archive. • EBS is block storage for EC2. • Glacier (now S3 Glacier) is *one tier* of S3. • RDS is relational DB. 🪣 Hook: “Need a bucket? Think S3.”"
+    },
+    "12. Which service can give you a secure and encrypted connection to a Virtual Private Cloud (VPC) on AWS over the public Internet?\na. AWS Shield\nb. AWS Direct Connect\nc. AWS Virtual Private Network (VPN)\nd. AWS Snowball": {
+      "answer": "c. AWS Virtual Private Network (VPN)",
+      "explanation": "AWS VPN uses IPSec tunnels over the public Internet to reach a VPC securely. • Direct Connect is private fiber. • Shield defends against DDoS. • Snowball moves data offline. 🔐 Hook: “VPN = secure pipe over public Net.”"
+    },
+    "13. Your organization frequently deploys a standard web application stack for new applications. What AWS service would enable them to define this common infrastructure in code and also detect any drift to the stack configuration of a deployed application?\na. AWS CloudFormation\nb. AWS OpsWorks\nc. AWS Elastic Beanstalk\nd. AWS CodeDeploy": {
+      "answer": "a. AWS CloudFormation",
+      "explanation": "CloudFormation captures the entire stack as code *and* detects configuration drift. • OpsWorks (Chef/Puppet) is config management. • Elastic Beanstalk abstracts infra. • CodeDeploy moves application bits, not infra. 🏗️ Hook: “CFN = blueprints for cloud buildings.”"
+    },
+    "14. Which pricing factors are considered when using AWS Lambda? (choose two)\na. Duration (memory based)\nb. Number of EC2 instances\nc. Number of VPC endpoints\nd. Number of requests": {
+      "answer": "a. Duration (memory based), d. Number of requests",
+      "explanation": "Lambda bills for **invocation count** and **GB-seconds** (runtime × memory). (Provisioned Concurrency adds a third cost only if you enable it.) • You never pay for EC2 instances or VPC endpoints. ⏱️ Hook: “Calls + clocks.”"
+    },
+    "15. Which architectural principle is illustrated in the following statement: 'Isolate the behavior of a component from other components that depend on it, increasing resiliency and agility.'\na. Monolithic Design\nb. Latency Awareness\nc. Vertical Scaling\nd. Loose coupling": {
+      "answer": "d. Loose coupling",
+      "explanation": "Loose coupling keeps components independent, boosting agility and resilience. • Monolithic design is the opposite. • Vertical scaling just buys bigger servers. • Latency awareness is a separate design concern. 🔗 Hook: “Cut the glue → loose coupling.”"
+    },
+    "16. Which tool can be used to automate the creation and management of multiple account AWS environments?\na. AWS Organizations\nb. AWS Config\nc. AWS Control Tower\nd. AWS Systems Manager": {
+      "answer": "c. AWS Control Tower",
+      "explanation": "Control Tower builds multi-account landing zones with guardrails and baselines in a few clicks. • Organizations only provides the account container. • Config audits resources. • Systems Manager runs ops tasks. 🏰 Hook: “Control Tower = autopilot for accounts.”"
+    },
+    "17. Which AWS service allows you to manage multiple AWS accounts, simplify billing for all accounts, and apply policies for governance of those accounts?\na. AWS Budgets\nb. AWS Config\nc. AWS Identity Center\nd. AWS Organizations": {
+      "answer": "d. AWS Organizations",
+      "explanation": "Organizations centralizes billing, creates new accounts, and enforces Service Control Policies. • Budgets tracks spend. • Config audits resources. • Identity Center provides SSO. 🗂️ Hook: “Org = folder for your AWS kids.”"
+    },
+    "18. Which AWS managed service provides the ability to set up and manage relational databases for the most common database engines?\na. Amazon Redshift\nb. Amazon Relational Database Service (RDS)\nc. Amazon DynamoDB\nd. Amazon Elastic File System (EFS)": {
+      "answer": "b. Amazon Relational Database Service (RDS)",
+      "explanation": "RDS automates backups, patching, and failover for MySQL, PostgreSQL, SQL Server, etc. • Redshift is a data warehouse. • DynamoDB is NoSQL. • EFS is a file system. 💾 Hook: “RDS = DBA on autopilot.”"
+    },
+    "19. What AWS service can be leveraged in the deployment of your custom software to Amazon EC2 and AWS Fargate?\na. AWS CodeCommit\nb. AWS CodeDeploy\nc. AWS CodePipeline\nd. AWS CodeBuild": {
+      "answer": "b. AWS CodeDeploy",
+      "explanation": "CodeDeploy orchestrates rolling, blue/green, and canary *application* deployments to EC2, Fargate, and Lambda. • CodeCommit is Git. • CodePipeline strings stages. • CodeBuild compiles/tests code. 🚀 Hook: “CodeDeploy moves bits, not infra.”"
+    },
+    "20. Which service provides a NoSQL cloud database with single-digit millisecond latency that operates as a key-value and document store?\na. Amazon RDS\nb. Amazon Redshift\nc. Amazon DynamoDB\nd. Amazon S3": {
+      "answer": "c. Amazon DynamoDB",
+      "explanation": "DynamoDB is AWS’s serverless key-value/document store with single-digit-ms reads/writes. • RDS is relational. • Redshift is analytical. • S3 is object storage. ⚡ Hook: “Dynamo = Dynamo-fast NoSQL.”"
+    },
+    "21. Which of the following would not be factored into a TCO comparison analysis of switching to the cloud from a traditional data center?\na. Data Center maintenance costs\nb. Custom software development\nc. Server hardware costs\nd. Power and cooling costs": {
+      "answer": "b. Custom software development",
+      "explanation": "TCO compares *infrastructure* costs—space, power, servers—not your bespoke code. • Maintenance, hardware, power/cooling are classic on-prem costs you shed. �� Hook: “TCO ≠ dev salaries.”"
+    },
+    "22. Within the Shared Responsibility Model, which areas would be the responsibility of the customer? (choose three)\na. Physical security of data centers\nb. Encryption of data in transit\nc. User access management\nd. Hardware maintenance\ne. Encryption of data at rest": {
+      "answer": "b. Encryption of data in transit, c. User access management, e. Encryption of data at rest",
+      "explanation": "Customers secure data and identities *in* the cloud; AWS secures *the* cloud. • Physical security and hardware are AWS. 🛡️ Hook: “You manage data & doors; AWS manages steel & silicon.”"
+    },
+    "23. Which disaster recovery approach would result in the lowest cost?\na. Backup and Restore\nb. Warm Standby\nc. Pilot Light\nd. Multi-Site": {
+      "answer": "a. Backup and Restore",
+      "explanation": "Simply storing backups and re-creating infra when needed is cheapest. • Pilot Light runs a minimal core. • Warm Standby runs smaller-scale live infra. • Multi-Site duplicates everything. 💾 Hook: “Cheapest DR = backups on ice.”"
+    },
+    "24. How will implementing elasticity in your cloud application reduce your TCO over implementing it in your traditional data center?\na. Adding more reserved capacity\nb. Adding more servers in advance\nc. Reducing unused capacity\nd. Increasing licensing costs": {
+      "answer": "c. Reducing unused capacity",
+      "explanation": "Auto-scaling up *and down* means you don’t pay for idle servers. • Adding reserved capacity or extra servers increases spend. • Licensing cost rises with more boxes. �� Hook: “Turn off the lights when nobody’s home.”"
+    },
+    "25. Which fully managed AWS service uses machine learning to both detect and protect your data that is stored in AWS?\na. Amazon GuardDuty\nb. AWS Shield\nc. Amazon Inspector\nd. Amazon Macie": {
+      "answer": "d. Amazon Macie",
+      "explanation": "Macie classifies and alerts on sensitive data such as PII using ML. • GuardDuty detects threats. • Shield mitigates DDoS. • Inspector scans vulnerabilities. 🔍 Hook: “Macie = privacy detective.”"
+    },
+    "26. You are looking to move a new web application into the cloud. Your organization has asked for a cost estimate on this application. What tool could you use to estimate costs for this new cloud workload?\na. AWS Cost Explorer\nb. AWS Trusted Advisor\nc. AWS Pricing Calculator\nd. AWS Organizations": {
+      "answer": "c. AWS Pricing Calculator",
+      "explanation": "The Pricing Calculator forecasts monthly costs for a proposed workload. • Cost Explorer visualizes *actual* spend. • Trusted Advisor gives best-practice checks. • Organizations groups accounts. 🧮 Hook: “Estimate first—Calculator.”"
+    },
+    "27. Which of the following services is a highly-available managed domain name system (DNS) service?\na. Amazon CloudFront\nb. Amazon Route 53\nc. AWS Elastic Beanstalk\nd. AWS Directory Service": {
+      "answer": "b. Amazon Route 53",
+      "explanation": "Route 53 is AWS’s globally redundant DNS service. • CloudFront is a CDN. • Elastic Beanstalk deploys apps. • Directory Service provides managed AD. 🌐 Hook: “53 = DNS port → Route 53.”"
+    },
+    "28. Your organization is working on an incident management and investigation policy now that they have moved a pilot application onto the cloud with AWS. Which pillar of the AWS Well-Architected Framework recommends the creation of this policy?\na. Operational Excellence\nb. Security\nc. Reliability\nd. Cost Optimization": {
+      "answer": "b. Security",
+      "explanation": "The Security pillar stresses incident response runbooks. • OE focuses on ops process. • Reliability addresses resiliency. • Cost Optimization handles spend. 🚒 Hook: “Security = respond, record, remediate.”"
+    },
+    "29. According to the concept of least privilege access, what should you set up when adding permissions for an IAM user?\na. Assign administrator access to all users\nb. Grant the most permissions available\nc. Grant least permissions needed\nd. Use root account for daily operations": {
+      "answer": "c. Grant least permissions needed",
+      "explanation": "Least privilege limits IAM entities to the minimum actions/time needed. • Admin-everywhere or root use breaks security. 🗝️ Hook: “Give a room key, not the master key.”"
+    },
+    "30. You are looking to launch a static website with minimal configuration. Which of the following AWS services provides this feature?\na. Amazon EC2\nb. Amazon EBS\nc. Amazon RDS\nd. Amazon S3": {
+      "answer": "d. Amazon S3",
+      "explanation": "S3 static-website hosting serves HTML/CSS/JS directly from buckets. • EC2 needs servers. • EBS is storage. • RDS is DB. 🌍 Hook: “S3 + index.html = instant site.”"
+    },
+    "31. Which online tool provides guidance in following AWS best practices by providing personalized recommendations for your cloud workloads?\na. AWS Trusted Advisor\nb. AWS Cost Explorer\nc. AWS Artifact\nd. AWS Pricing Calculator": {
+      "answer": "a. AWS Trusted Advisor",
+      "explanation": "Trusted Advisor scans your account and recommends cost, security, and performance fixes. • Cost Explorer is billing graphs. • Artifact stores compliance docs. • Pricing Calculator is estimates. 🛠️ Hook: “Advisor = AWS coach.”"
+    },
+    "32. Your organization is looking to review best practices for AWS prior to implementing their first cloud application. What resource would best meet this need?\na. AWS Pricing Calculator\nb. AWS Artifact\nc. AWS Well-Architected Framework\nd. AWS Config": {
+      "answer": "c. AWS Well-Architected Framework",
+      "explanation": "The Well-Architected docs & tool outline the six pillars and design principles. • Artifact is compliance. • Calculator is cost. • Config records resource state. 📖 Hook: “Well-Architected = design bible.”"
+    },
+    "33. What is the minimum AWS support plan that provides the complete set of AWS Trusted Advisor checks?\na. Developer\nb. Business\nc. Basic\nd. Enterprise": {
+      "answer": "b. Business",
+      "explanation": "All Trusted Advisor checks unlock at Business tier. • Developer has only 7 core checks. • Basic has none. • Enterprise includes Business plus TAM. 🏢 Hook: “Want all checks? Go Business+.”"
+    },
+    "34. Which AWS service enables you to protect your web application by using a rule-based system to detect traffic and actions that should be blocked?\na. AWS Shield\nb. AWS CloudTrail\nc. AWS Web Application Firewall (WAF)\nd. AWS Inspector": {
+      "answer": "c. AWS Web Application Firewall (WAF)",
+      "explanation": "AWS WAF lets you build rules (IP, SQLi, header) to block bad HTTP. • Shield handles DDoS only. • CloudTrail logs API calls. • Inspector scans host vulns. 🛡️ Hook: “WAF = Layer-7 rule shield.”"
+    },
+    "35. Your US-based team wants to expand an internal application to your office in Singapore. They are able to take the application and spin up a version in the ap-southeast-1 region. Which benefit of cloud computing is best illustrated with this scenario?\na. Elasticity\nb. Go global in minutes\nc. Scalability\nd. Cost optimization": {
+      "answer": "b. Go global in minutes",
+      "explanation": "Copying the workload to a new Region shows AWS’s *global reach* benefit. • Elasticity is scaling. • Scalability is size. • Cost Optimization is money. 🌏 Hook: “Ctrl-C, Ctrl-V → new continent.”"
+    },
+    "36. Within the Shared Responsibility Model, what area would be the responsibility of the customer?\na. Physical security of AWS data centers\nb. Networking hardware maintenance\nc. Software patching of AWS-managed services\nd. Patching the OS on EC2 instances": {
+      "answer": "d. Patching the OS on EC2 instances",
+      "explanation": "If you manage the guest OS, you patch it. AWS handles hardware and managed-service patching. 🩹 Hook: “If you can SSH, you must patch.”"
+    },
+    "37. What will IAM users use to authenticate themselves when using the AWS CLI?\na. Passwords\nb. Access keys per IAM user\nc. SSH keys\nd. MFA tokens": {
+      "answer": "b. Access keys per IAM user",
+      "explanation": "CLI uses an access-key ID and secret key. • Passwords are for console. • SSH keys are for EC2 login. • MFA adds a second factor, not the primary credential. 🔑 Hook: “CLI speaks access keys.”"
+    },
+    "38. What AWS service enables auditing of your AWS account by logging actions taken on your AWS resources?\na. Amazon GuardDuty\nb. AWS Config\nc. AWS WAF\nd. AWS CloudTrail": {
+      "answer": "d. AWS CloudTrail",
+      "explanation": "CloudTrail records every API call for audit and compliance. • GuardDuty is threat detection. • Config tracks resource config. • WAF filters HTTP. 📜 Hook: “Trail = breadcrumb of API calls.”"
+    },
+    "39. How can you configure the same permissions for multiple IAM users?\na. Copy individual policies to users\nb. Create IAM Group and assign permissions\nc. Attach the same policy to each user\nd. Use AWS Trusted Advisor": {
+      "answer": "b. Create IAM Group and assign permissions",
+      "explanation": "Attach the policy once to a group and add/remove users. • Copying or attaching individually is brittle. • Trusted Advisor is unrelated. 👥 Hook: “Group once, benefit many.”"
+    },
+    "40. Which AWS service enables you to use your own keys to encrypt data on AWS using a hardware security module (HSM)?\na. AWS KMS\nb. AWS CloudHSM\nc. AWS Secrets Manager\nd. AWS Shield": {
+      "answer": "b. AWS CloudHSM",
+      "explanation": "CloudHSM gives you dedicated, customer-owned FIPS L3 HSMs. • KMS uses shared HSMs managed by AWS. • Secrets Manager stores secrets, not hardware cryptography. • Shield is DDoS. 🔐 Hook: “Bring your own hardware keys.”"
+    },
+    "41. Your organization is adopting a hybrid approach for storage and wants to leverage the cloud as a backup while having low latency access to data on its local network. Which AWS service could be leveraged for this?\na. AWS Storage Gateway\nb. Amazon CloudFront\nc. AWS Direct Connect\nd. Amazon RDS": {
+      "answer": "a. AWS Storage Gateway",
+      "explanation": "Storage Gateway presents on-prem NFS/SMB/iSCSI while tiering data to S3 or Glacier. • CloudFront is CDN. • Direct Connect is a link. • RDS is DB. 🗄️ Hook: “On-prem disk, cloud backend.”"
+    },
+    "42. Which service provides an in-memory data store that supports both Redis and Memcached?\na. Amazon ElastiCache\nb. Amazon DynamoDB\nc. Amazon Aurora\nd. AWS CloudFormation": {
+      "answer": "a. Amazon ElastiCache",
+      "explanation": "ElastiCache offers fully managed Redis *and* Memcached clusters. • DynamoDB is persistent NoSQL. • Aurora is relational. • CloudFormation is infra as code. ⚡ Hook: “Need a cache? Choose ElastiCache.”"
+    },
+    "43. When deploying an application across multiple availability zones, which design concept are you implementing?\na. Loose coupling\nb. Defense in depth\nc. Design for failure\nd. Automation": {
+      "answer": "c. Design for failure",
+      "explanation": "Spreading across AZs assumes components *will* fail and limits blast radius. • Loose coupling is a broader principle. • Defense in depth is security. • Automation is CI/CD. 💥 Hook: “Expect failure—design for it.”"
+    },
+    "44. Which AWS concept is the definition of the information required to launch an EC2 instance including the contents of the root volume, launch permissions, and block device mapping?\na. Amazon Machine Image (AMI)\nb. Auto Scaling Group\nc. Launch Template\nd. CloudFormation Template": {
+      "answer": "a. Amazon Machine Image (AMI)",
+      "explanation": "An AMI bundles the root snapshot, permissions, and block-device map. • Auto Scaling Group and Launch Template *reference* an AMI. • CloudFormation describes full stacks. 🏷️ Hook: “AMI = EC2 recipe card.”"
+    },
+    "45. Your organization is looking to test a new web application concept. The team set up an AWS account and infrastructure within a day on which they will build a prototype for this application. Which cloud computing benefit does this illustrate?\na. Reliability\nb. Security\nc. Increase speed and agility\nd. Cost Optimization": {
+      "answer": "c. Increase speed and agility",
+      "explanation": "The cloud allows rapid provisioning of infra, accelerating prototypes—pure agility. • Reliability and security are quality traits. • Cost Optimization is secondary here. �� Hook: “Idea → server in a sprint.”"
+    },
+    "46. Which element of the AWS Global Infrastructure is made up of one or more data centers connected by a low-latency network with redundant power, networking, and connectivity within an AWS Region?\na. Edge Location\nb. Local Zone\nc. Region\nd. Availability Zone": {
+      "answer": "d. Availability Zone",
+      "explanation": "An AZ is a cluster of data centers with redundant power and networking inside a Region. • A Region is many AZs. • Local Zones bring compute close to edge. • Edge Locations host the CDN. 🏢 Hook: “AZ = actual data-center zone.”"
+    },
+    "47. How can you improve the security of your IAM user account?\na. Create a new IAM user\nb. Use complex passwords only\nc. Enable multi-factor authentication\nd. Rotate access keys daily": {
+      "answer": "c. Enable multi-factor authentication",
+      "explanation": "MFA adds a second factor (OTP/FIDO) and drastically reduces takeover risk. • New user or complex password alone isn’t enough. • Daily key rotation is over-kill and brittle. 🔐 Hook: “Something you know *and* something you have.”"
+    },
+    "48. Your company is looking to perform batch data analysis using an EC2 instance. There is a flexible start and stop time for this workload, and it can stop and restart as needed. What would be the most cost effective EC2 pricing model given these requirements?\na. Spot Instance\nb. Reserved Instance\nc. Dedicated Host\nd. On-Demand Instance": {
+      "answer": "a. Spot Instance",
+      "explanation": "Spot offers up to 90 % discount if the job can handle interruptions. • Reserved costs more but offers guarantees. • Dedicated Host is for licensing. • On-Demand is full price. 💸 Hook: “Flexible batch? Take the Spot deal.”"
+    },
+    "49. Your company is using the AWS Customer Carbon Footprint tool to determine the environmental impact of their current cloud workloads. They are planning to use this information to optimize future workloads. Which pillar of the Well-Architected Framework would this activity fit into?\na. Sustainability\nb. Security\nc. Performance Efficiency\nd. Operational Excellence": {
+      "answer": "a. Sustainability",
+      "explanation": "Measuring and reducing environmental impact is exactly the **Sustainability** pillar. • Security, Perf Efficiency, and OE focus elsewhere. �� Hook: “Carbon = green pillar.”"
+    },
+    "50. When you deploy your application across multiple AWS availability zones, which architectural principle are you implementing?\na. Loose coupling\nb. Cost Optimization\nc. Scalability\nd. High availability": {
+      "answer": "d. High availability",
+      "explanation": "Multi-AZ removes a single-AZ SPOF, achieving high availability. • Loose coupling is about dependency. • Scalability is about size. • Cost Optimization is spending. 🟢 Hook: “Two AZs = HA.”"
+    },
+    "51. Your company needs to launch a MySQL database in the cloud for a web application. They will need to have access to the underlying operating system to install OS-level optimizations. What solution would meet these requirements?\na. Amazon Aurora\nb. Amazon RDS\nc. Utilize MySQL on Amazon EC2\nd. Amazon DynamoDB": {
+      "answer": "c. Utilize MySQL on Amazon EC2",
+      "explanation": "Running MySQL on EC2 gives full OS access for kernel/driver tweaks. • RDS/Aurora abstract the OS. • DynamoDB is NoSQL. 🛠️ Hook: “Need root? Go EC2.”"
+    },
+    "52. Your company is migrating to the cloud. You have multiple licenses for server software that is licensed per server. Which EC2 pricing model should you choose for the instances when you launch them in AWS?\na. Spot Instances\nb. Dedicated Host\nc. Reserved Instance\nd. On-Demand Instance": {
+      "answer": "b. Dedicated Host",
+      "explanation": "Dedicated Hosts map BYOL licenses to specific physical sockets/cores for compliance. • RIs still share hosts. • Spot may move instances. • On-Demand shares hosts too. �� Hook: “License? Reserve the whole house.”"
+    },
+    "53. Which tool enables you to visualize current AWS costs and predict future costs based on current usage?\na. AWS Pricing Calculator\nb. AWS Budgets\nc. AWS Trusted Advisor\nd. AWS Cost Explorer": {
+      "answer": "d. AWS Cost Explorer",
+      "explanation": "Cost Explorer graphs historical spend and forecasts trends. • Pricing Calculator estimates hypothetical workloads. • Budgets set alerts. • Trusted Advisor checks best practices. 📊 Hook: “Explorer = explore your bill.”"
+    },
+    "54. Which AWS service would enable you to share reserved instances across multiple accounts that your company manages?\na. AWS Organizations\nb. AWS Savings Plans\nc. AWS Billing Dashboard\nd. AWS Config": {
+      "answer": "a. AWS Organizations",
+      "explanation": "Organizations’ RI sharing pools capacity across linked accounts. • Savings Plans auto-apply but still need Orgs for multi-account share. • Billing Dashboard is a view only. • Config is compliance. 🤝 Hook: “RI sharing lives in the Org family.”"
+    },
+    "55. You want to have email support within business hours from AWS for an application you are building. What is the minimum support plan that provides this?\na. Basic\nb. Business\nc. Enterprise\nd. Developer": {
+      "answer": "d. Developer",
+      "explanation": "Developer plan offers business-hours email to Cloud Support Engineers. • Basic has none. • Business/Enterprise add 24 × 7 and phone/TAM extras. 📧 Hook: “Dev plan = daytime email help.”"
+    },
+    "56. Which service provides a highly-available and elastic NFS file system for both cloud-based and on-premise servers?\na. Amazon S3\nb. Amazon FSx\nc. Amazon Elastic File System (EFS)\nd. Amazon Glacier": {
+      "answer": "c. Amazon Elastic File System (EFS)",
+      "explanation": "EFS scales automatically, supports NFS, and can mount from on-prem via VPN/DX. • S3 is object storage. • FSx targets Windows or Lustre. • Glacier is archive. 📂 Hook: “Need POSIX shares? Think EFS.”"
+    },
+    "57. If you wanted to engage AWS resources for a paid engagement to assist in a cloud migration, which team would you leverage?\na. AWS Professional Services\nb. AWS Support Concierge\nc. AWS Technical Account Manager\nd. AWS Solutions Architects": {
+      "answer": "a. AWS Professional Services",
+      "explanation": "ProServe consultants execute scoped, paid migration or build projects. • Support Concierge is for billing. • TAM is part of Enterprise Support. • Solutions Architects are pre-sales. 🤝 Hook: “ProServe = AWS consultants for hire.”"
+    },
+    "58. Your company is moving their data storage from their data center into the cloud. They are evaluating different approaches for data warehousing. What AWS service provides a managed data warehousing solution that supports columnar storage up to a petabyte scale?\na. Amazon Aurora\nb. Amazon S3\nc. Amazon DynamoDB\nd. Amazon Redshift": {
+      "answer": "d. Amazon Redshift",
+      "explanation": "Redshift is a column-store MPP data warehouse at petabyte scale. • Aurora is OLTP. • DynamoDB is NoSQL. • S3 is raw object storage. 📈 Hook: “Redshift = big SQL analytics.”"
+    },
+    "59. Within the Shared Responsibility Model, what responsibility is shared by both the customer and AWS?\na. Physical data center security\nb. Encryption of data in transit\nc. Configuration Management\nd. Hypervisor patching": {
+      "answer": "c. Configuration Management",
+      "explanation": "AWS manages configuration of the host OS & hypervisor; customers manage guest OS/apps—so both handle configuration *within their layer*. • Physical security & hypervisor patching are AWS. • Data encryption in transit is customer. 🔄 Hook: “Each side tunes its slice.”"
+    },
+    "60. Which of the following is an economic benefit of migrating to the cloud?\na. Increased CAPEX\nb. Increased TCO\nc. Increased maintenance cost\nd. Reduced Total Cost of Ownership (TCO)": {
+      "answer": "d. Reduced Total Cost of Ownership (TCO)",
+      "explanation": "Pay-as-you-go pricing and managed services lower overall CAPEX/OPEX. • CAPEX rises on-prem. • Higher TCO/maintenance contradict cloud value. 💵 Hook: “Cloud turns cap-ex into op-ex savings.”"
+    },
+    "61. Which AWS service provides the ability to assess and audit configuration of the AWS resources you have deployed in your account?\na. AWS Trusted Advisor\nb. AWS Config\nc. Amazon CloudWatch\nd. AWS CloudTrail": {
+      "answer": "b. AWS Config",
+      "explanation": "Config snapshots resource state and evaluates compliance rules. • CloudTrail logs API calls. • CloudWatch monitors metrics. • Trusted Advisor gives best-practice hints. 📋 Hook: “Config knows WHAT exists and HOW it’s set.”"
+    },
+    "62. Your company has deployed a new web application across multiple availability zones for high availability. What pillar of the Well-Architected Framework recommends this approach?\na. Operational Excellence\nb. Security\nc. Reliability\nd. Sustainability": {
+      "answer": "c. Reliability",
+      "explanation": "The Reliability pillar encourages multi-AZ to withstand failures. • OE and Security are other pillars. • Sustainability focuses environment. 🔄 Hook: “Reliability = resist failure.”"
+    },
+    "63. Which of the following services could assist in migrating your data from your on-premise data center into AWS?\na. AWS Storage Gateway\nb. AWS Snowmobile\nc. AWS Snowball\nd. Amazon FSx": {
+      "answer": "c. AWS Snowball",
+      "explanation": "Snowball ships 80-TB encrypted appliances for bulk migration. • Storage Gateway is hybrid caching. • Snowmobile is exabyte truck, overkill. • FSx is file system service. 📦 Hook: “Snowball = giant USB drive.”"
+    },
+    "64. When your team moved an application into the cloud, they implemented elasticity so that the application could scale to meet the current user demand. Which cloud computing benefit is best illustrated with this scenario?\na. High availability\nb. Durability\nc. Reliability\nd. Stop guessing capacity": {
+      "answer": "d. Stop guessing capacity",
+      "explanation": "Auto-scaling removes the need to forecast peak server counts. • High availability is redundancy. • Durability protects data. • Reliability is uptime. 📈 Hook: “Elasticity = pay only when people show up.”"
+    },
+    "65. Your organization is looking to leverage both their traditional data center and the public cloud. What type of cloud architecture does this describe?\na. Private Cloud\nb. Public Cloud\nc. Multi-Cloud\nd. Hybrid cloud": {
+      "answer": "d. Hybrid cloud",
+      "explanation": "Hybrid combines on-prem and public cloud resources under one architecture. • Private is on-prem only. • Public is cloud only. • Multi-Cloud is multiple *public* providers. 🌉 Hook: “Hybrid = bridge between your DC and AWS.”"
+    }
+  }
+}
